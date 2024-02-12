@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Book Details</h2>
+  
+    <div class="form-group">
+      <label for="searchTerm">Search Book by Title:</label>
+      <input type="text" id="searchTerm" class="form-control" [(ngModel)]="searchTerm">
+      <button class="btn btn-primary mt-2" (click)="searchBook()">Search</button>
+    </div>
+  
+    <div *ngIf="isBookExist">
+      <!-- Display book details -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
+          <p class="card-text"><strong>Genre:</strong> {{ book.genre }}</p>
+          <p class="card-text"><strong>ISBN:</strong> {{ book.isbn }}</p>
+          <p class="card-text"><strong>Publish Date:</strong> {{ book.publishDate | date:'short' }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="errMsg">
+      <!-- Display error message if book not found -->
+      <p class="text-danger">{{ errMsg }}</p>
+    </div>
+  </div>
+  

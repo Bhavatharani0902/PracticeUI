@@ -1,0 +1,24 @@
+<!-- getallbooks.component.html -->
+
+<div class="container">
+    <h2>Book Management</h2>
+  
+    <div *ngIf="books.length === 0">
+      <p>No books available.</p>
+    </div>
+  
+    <div *ngFor="let book of books">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <p class="card-text">Author: {{ book.author }}</p>
+          <p class="card-text">Genre: {{ book.genre }}</p>
+          <p class="card-text">ISBN: {{ book.isbn }}</p>
+          <p class="card-text">Publish Date: {{ book.publishDate | date }}</p>
+  
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  

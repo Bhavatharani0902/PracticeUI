@@ -1,0 +1,23 @@
+/* getallbooks.component.css */
+
+.container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin-bottom: 5px;
+  }
+  
+  .btn {
+    margin-right: 10px;
+  }
+  

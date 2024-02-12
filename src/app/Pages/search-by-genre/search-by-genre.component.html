@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Search by Genre</h2>
+    
+    <div class="form-group">
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" class="form-control" [(ngModel)]="genre">
+    </div>
+    
+    <button class="btn btn-primary" (click)="search()">Search</button>
+
+    <div *ngIf="searchResults.length > 0" class="results-container">
+        <h3>Search Results</h3>
+        <ul>
+            <li *ngFor="let book of searchResults">
+                <strong>Title:</strong> {{ book.title }}<br>
+                <strong>Author:</strong> {{ book.author }}<br>
+                <strong>Genre:</strong> {{ book.genre }}<br>
+                <strong>ISBN:</strong> {{ book.isbn }}<br>
+                <strong>Publish Date:</strong> {{ book.publishDate | date:'short' }}
+            </li>
+        </ul>
+    </div>
+
+    <div *ngIf="searchResults.length === 0" class="no-results">
+        No books found for the genre "{{ genre }}".
+    </div>
+</div>
